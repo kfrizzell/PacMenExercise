@@ -7,7 +7,7 @@
 + When the user selects "Start Game" they are dispersed in different directions within the bounds of the user's page.
 
 ## How to Run
-+ Download into one directory: index.html, pacmen.js, images/pacman1, images/pacman2, images/pacman3, images/pacman4.
++ Download into one directory: index.html, pacmen.js, pacman1.png, pacman2.png, pacman3.png, pacman4.png.
 + Open index.html in your browser.
 
 ## Roadmap of Future Improvements
