@@ -1,13 +1,12 @@
-//Katrina Frizzell PacMan Factory Exercise
 let pos = 0;
 const pacArray = [
   ['./images/PacMan1.png', './images/PacMan2.png'],
   ['./images/PacMan3.png', './images/PacMan4.png'],
 ];
 let direction = 0;
-const pacMen = []; // Array
+const pacMen = []; // This array holds all the pacmen
 
-// Return random
+// This function returns an object with random values
 function setToRandom(scale) {
   return {
     x: Math.random() * scale,
@@ -15,25 +14,26 @@ function setToRandom(scale) {
   };
 }
 
-// Random velocity and position
+// Factory to make a PacMan at a random position with random velocity
 function makePac() {
-  let velocity = setToRandom(10); 
+  // returns an object with random values scaled {x: 33, y: 21}
+  let velocity = setToRandom(10); // {x:?, y:?}
   let position = setToRandom(200);
 
-  // Add image
+  // Add image to div id = game
   let game = document.getElementById('game');
   let newimg = document.createElement('img');
   newimg.style.position = 'absolute';
   newimg.src = './images/PacMan1.png';
   newimg.width = 100;
 
-  // Positon
+  // TODO: set position here
   newimg.style.left = position.x;
   newimg.style.top = position.y;
-  // Add Child
+  // TODO add new Child image to game
   game.appendChild(newimg);
 
-  // return details
+  // return details in an object
   return {
     position,
     velocity,
@@ -55,7 +55,7 @@ function update() {
 }
 
 function checkCollisions(item) {
-  // Check collisions between pacmen
+  // TODO: detect collision with all walls and make pacman bounce
   if (
     item.position.x + item.velocity.x + item.newimg.width > window.innerWidth ||
     item.position.x + item.velocity.x < 0
@@ -69,7 +69,7 @@ function checkCollisions(item) {
 }
 
 
-// Add a new PacMan
+
 function makeOne() {
   pacMen.push(makePac()); // add a new PacMan
 }
@@ -77,3 +77,4 @@ function makeOne() {
 //don't change this line
 if (typeof module !== 'undefined') {
   module.exports = { checkCollisions, update, pacMen };
+}
